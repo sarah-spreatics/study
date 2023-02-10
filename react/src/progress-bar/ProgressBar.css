@@ -1,0 +1,44 @@
+.progress-bar .flex-box {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  flex-grow: 1;
+}
+.progress-bar .bar {
+  flex-grow: 1;
+  width: 8px;
+  height: 10px;
+  background-color: lightblue;
+  border-radius: 5px;
+  position: relative;
+}
+.progress-bar .bar div {
+  position: absolute;
+  left: 0;
+  top: -2px;
+  align-items: center;
+}
+.progress-bar .bar span:first-child {
+  display: inline-block;
+  height: 10px;
+  border-radius: 5px;
+  background-color: blue;
+}
+
+.progress-bar .bar span:last-child {
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: blue;
+  position: relative;
+  top: -1px;
+  left: -5px;
+}
+
+.progress-bar .page {
+  font-weight: 500;
+  padding-left: 1.5rem;
+  text-align: right;
+}
