@@ -28,13 +28,7 @@ export default function Audio() {
   }, []);
   return (
     <>
-      <audio
-        ref={audio}
-        src="https://d2iwdqgro8i2ew.cloudfront.net/codingon/lesson/script/4243_voice.mp3"
-        preload="metadata"
-        controls
-        autoPlay
-      />
+      <audio ref={audio} src="" preload="metadata" controls autoPlay />
       <br />
       <input type="range" onChange={controlVolume} />
       <button onClick={showTime}>현재 시간</button>

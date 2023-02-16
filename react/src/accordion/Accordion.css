@@ -1,0 +1,42 @@
+.accordion {
+  background-color: black;
+  color: white;
+}
+
+.accordion h2 {
+  margin: 0;
+  cursor: pointer;
+}
+
+.accordion .close {
+  max-height: 0;
+  overflow: hidden;
+  animation: closeAnimation 0.5s;
+}
+
+.accordion .open {
+  animation: openAnimation 1s;
+}
+
+.accordion p {
+  margin: 0;
+}
+
+@keyframes closeAnimation {
+  0% {
+    max-height: 100px;
+  }
+  100% {
+    max-height: 0;
+  }
+}
+
+@keyframes openAnimation {
+  0% {
+    max-height: 0;
+    overflow: hidden;
+  }
+  100% {
+    max-height: 100px;
+  }
+}
