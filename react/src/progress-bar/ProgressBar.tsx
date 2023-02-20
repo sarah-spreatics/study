@@ -1,7 +1,12 @@
 import { useState, useRef, useEffect } from "react";
 import "./ProgressBar.css";
 
-export default function ProgressBar() {
+interface Type {
+  currentTime: number;
+  totalTime: number;
+}
+
+export default function ProgressBar({ currentTime, totalTime }: Type) {
   const bar = useRef<HTMLDivElement>(null);
   const span = useRef<HTMLSpanElement>(null);
   const [index, setIndex] = useState(1);
@@ -13,12 +18,14 @@ export default function ProgressBar() {
   };
 
   useEffect(() => {
-    if (span.current && bar.current)
+    if (span.current && bar.current) {
       span.current.style.width =
-        (bar.current.clientWidth / page) * index + "px";
+        (((bar.current.clientWidth / page) * index) / totalTime) * currentTime +
+        "px";
+    }
 
     window.addEventListener("resize", getWidth);
-  }, [width, index]);
+  }, [width, index, currentTime]);
   return (
     <>
       <div className="progress-bar">
